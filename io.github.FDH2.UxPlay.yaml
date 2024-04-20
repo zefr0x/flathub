@@ -7,6 +7,7 @@ finish-args:
   - --share=ipc
   - --socket=x11
   - --device=dri
+  - --system-talk-name=org.freedesktop.Avahi
 cleanup:
   - /include
   - /lib/pkgconfig
