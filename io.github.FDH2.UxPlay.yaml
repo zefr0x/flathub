@@ -1,0 +1,77 @@
+id: io.github.FDH2.UxPlay
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: uxplay
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --device=dri
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /share/pkgconfig
+  - /share/aclocal
+  - /man
+  - /share/man
+  - /share/doc
+  - '*.la'
+  - '*.a'
+modules:
+  - name: uxplay
+    buildsystem: cmake
+    sources:
+      - type: git
+        url: https://github.com/FDH2/UxPlay.git
+        tag: v1.68.2
+        commit: d90a3c33bf4449aea5f52f9b00ab4710c7f9c38a
+        x-checker-data:
+          type: git
+          version-scheme: semantic
+    modules:
+      - name: avahi
+        config-opts:
+          - --with-distro=none
+          - --disable-qt3
+          - --disable-qt4
+          - --disable-qt5
+          - --disable-gtk
+          - --disable-gtk3
+          - --disable-python
+          - --disable-pygobject
+          - --disable-python-dbus
+          - --disable-mono
+          - --disable-monodoc
+          - --disable-autoipd
+          - --disable-core-docs
+          - --disable-manpages
+          - --disable-xmltoman
+          - --disable-tests
+          - --disable-libdaemon
+          - --enable-compat-libdns_sd
+          - --disable-compat-howl
+          - --disable-libevent
+        cleanup:
+          - '/bin/avahi-*'
+          - /share/locale
+          - /share/gir-1.0
+        sources:
+          - type: git
+            url: https://github.com/lathiat/avahi.git
+            tag: v0.8
+            commit: f060abee2807c943821d88839c013ce15db17b58
+            x-checker-data:
+              type: git
+              version-scheme: semantic
+      - name: libplist
+        buildsystem: autotools
+        cleanup:
+          - /bin
+        sources:
+          - type: git
+            url: https://github.com/libimobiledevice/libplist.git
+            tag: 2.4.0
+            commit: 51623f619c06dd704bcaafb4afeceb307ebf3193
+            x-checker-data:
+              type: git
+              version-scheme: semantic
