@@ -1,0 +1,136 @@
+# Generated with flatpak-pip-generator --requirements-file requirements.txt --checker-data --runtime org.kde.Sdk --yaml
+# Some modifications were made for cross-platform support.
+build-commands: []
+buildsystem: simple
+modules:
+  - name: python3-jsonschema
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "jsonschema" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/e0/44/827b2a91a5816512fcaf3cc4ebc465ccd5d598c45cefa6703fcf4a79018f/attrs-23.2.0-py3-none-any.whl
+        sha256: 99b87a485a5820b23b879f04c2305b44b951b502fd64be915879d77a7e8fc6f1
+        x-checker-data:
+          name: attrs
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/c8/2f/324fab4be6fe37fb7b521546e8a557e6cf08c1c1b3d0b4839a00f589d9ef/jsonschema-4.22.0-py3-none-any.whl
+        sha256: ff4cfd6b1367a40e7bc6411caec72effadd3db0bbe5017de188f2d6108335802
+        x-checker-data:
+          name: jsonschema
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/ee/07/44bd408781594c4d0a027666ef27fab1e441b109dc3b76b4f836f8fd04fe/jsonschema_specifications-2023.12.1-py3-none-any.whl
+        sha256: 87e4fdf3a94858b8a2ba2778d9ba57d8a9cafca7c7489c46ba0d30a8bc6a9c3c
+        x-checker-data:
+          name: jsonschema_specifications
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/b7/59/2056f61236782a2c86b33906c025d4f4a0b17be0161b63b70fd9e8775d36/referencing-0.35.1-py3-none-any.whl
+        sha256: eda6d3234d62814d1c64e305c1331c9a3a6132da475ab6382eaa997b21ee75de
+        x-checker-data:
+          name: referencing
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/1b/a0/a3702128743ae5bf14175a7333a4741db167f62d42f70e0edc15d9cd45c5/rpds_py-0.18.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        sha256: 3c20f05e8e3d4fc76875fc9cb8cf24b90a63f5a1b4c5b9273f0e8225e169b100
+        only-arches:
+          - x86_64
+        x-checker-data:
+          name: rpds_py
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/92/48/32bed868dd4e7d16e26457cc0b8634d6b16cb0e082a93f044ef5f7c77361/rpds_py-0.18.1-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+        sha256: 154bf5c93d79558b44e5b50cc354aa0459e518e83677791e6adb0b039b7aa6a7
+        only-arches:
+          - aarch64
+        x-checker-data:
+          name: rpds_py
+          packagetype: bdist_wheel
+          type: pypi
+  - name: python3-sentry-sdk
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "sentry-sdk" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/5b/11/1e78951465b4a225519b8c3ad29769c49e0d8d157a070f681d5b6d64737f/certifi-2024.6.2-py3-none-any.whl
+        sha256: ddc6c8ce995e6987e7faf5e3f1b02b302836a0e5d98ece18392cb1a36c72ad56
+        x-checker-data:
+          name: certifi
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/c2/ab/522cf99db4905094a6e0ae6e2661a2a9e4890a1d3991b5bf45e206637721/sentry_sdk-2.6.0-py2.py3-none-any.whl
+        sha256: 422b91cb49378b97e7e8d0e8d5a1069df23689d45262b86f54988a7db264e874
+        x-checker-data:
+          name: sentry_sdk
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/ca/1c/89ffc63a9605b583d5df2be791a27bc1a42b7c32bab68d3c8f2f73a98cd4/urllib3-2.2.2-py3-none-any.whl
+        sha256: a448b2f64d686155468037e1ace9f2d2199776e17f0a46610480d311f73e3472
+        x-checker-data:
+          name: urllib3
+          packagetype: bdist_wheel
+          type: pypi
+  - name: python3-psutil
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "psutil" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/18/c7/8c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9/psutil-6.0.0.tar.gz
+        sha256: 8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2
+        x-checker-data:
+          name: psutil
+          type: pypi
+  - name: python3-distro
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "distro" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl
+        sha256: 7bffd925d65168f85027d8da9af6bddab658135b840670a223589bc0c8ef02b2
+        x-checker-data:
+          name: distro
+          packagetype: bdist_wheel
+          type: pypi
+  - name: python3-truststore
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "truststore" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/4b/ba/362829faff5c470defbb2fc574961e1d86427de26ee25ed38d5c3ceec00d/truststore-0.9.1-py3-none-any.whl
+        sha256: 7f5b447d68318d966428131fc1c00442cca3a2d581a3986143558f007efba0b4
+        x-checker-data:
+          name: truststore
+          packagetype: bdist_wheel
+          type: pypi
+  - name: python3-importlib-resources
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "importlib-resources" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/75/06/4df55e1b7b112d183f65db9503bff189e97179b256e1ea450a3c365241e0/importlib_resources-6.4.0-py3-none-any.whl
+        sha256: 50d10f043df931902d4194ea07ec57960f66a80449ff867bfe782b4c486ba78c
+        x-checker-data:
+          name: importlib_resources
+          packagetype: bdist_wheel
+          type: pypi
+name: python3-requirements-gui

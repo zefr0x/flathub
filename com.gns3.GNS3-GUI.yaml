@@ -1,0 +1,44 @@
+id: com.gns3.GNS3-GUI
+runtime: org.kde.Platform
+runtime-version: '5.15-23.08'
+sdk: org.kde.Sdk
+base: com.riverbankcomputing.PyQt.BaseApp
+base-version: '5.15-23.08'
+command: gns3
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --share=network
+rename-desktop-file: gns3.desktop
+rename-icon: gns3
+rename-mime-file: gns3-gui.xml
+rename-mime-icons:
+  - application-x-gns3project
+  - application-x-gns3appliance
+  - application-x-gns3
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /share/pkgconfig
+  - /man
+  - /share/man
+  - /share/doc
+  - '*.la'
+  - '*.a'
+modules:
+  - name: gns3-gui
+    buildsystem: simple
+    build-commands:
+    - pip3 install --prefix=/app --no-deps .
+    sources:
+      - type: git
+        url: https://github.com/GNS3/gns3-gui.git
+        tag: v2.2.47
+        commit: 812aedebe3d615af3e3a6128b6e0aed8349ff050
+        x-checker-data:
+          type: git
+          tag-pattern: ^v(\d.\d.\d)$
+          version-scheme: semantic
+    modules:
+      - ./python3-requirements-gui.yaml
